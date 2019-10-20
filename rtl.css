@@ -1,0 +1,147 @@
+/*
+Theme Name: FeatherLite
+
+Adding support for language written in a Right To Left (RTL) direction is easy -
+it's just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+https://codex.wordpress.org/Right_to_Left_Language_Support
+
+*/
+
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+.spaceLeft {
+	margin-left: 0;
+	margin-right: 0.5em;
+}
+.spaceRight {
+	margin-right: 0;
+	margin-left: 0.5em;
+}
+.read-more i.fa-caret-right::before {
+    content: "\f0d9";
+}
+.page-links,
+.post-navigation .nav-previous {
+    text-align: left;
+}
+#comments article footer img {
+    float: right;
+    margin-right: inherit;
+    margin-left: 1em;
+}
+#comments .reply {
+	left: 1.5em;
+    right: inherit;
+}
+#comments ol ol {
+    padding-left: 0;
+	padding-right: 5%;
+}
+.site-search .search-container label:after {
+	right: 0;
+	left: inherit;
+	border-right-width: 0px;
+	border-left-style: solid;
+	border-left-width: 1px;
+}
+#toTop {
+	right: inherit;
+    left: 30px;
+}
+.header_wrapper {
+    overflow: hidden;
+}
+.main-navigation div > ul > li > ul::before {
+	right: 30px;
+	left: inherit;
+}
+.main-navigation div > ul > li > ul::after {
+	right: 27px;
+	left: inherit;
+}
+.main-navigation ul {
+	padding-right: 0;
+}
+.main-navigation ul ul a {
+	text-align: right;
+}
+.main-navigation li a:not(:last-child)::after {
+    margin: 0 7px 0 0;
+	float: left;
+	line-height: inherit;
+}
+.main-navigation ul ul li a:not(:last-child)::after {
+    content: "\f104";
+    margin: 0 7px 0 0;
+    float: left;
+}
+.main-navigation ul ul ul {
+	right: 100%;
+	left: inherit;
+}
+.widget_archive li, .widget_categories li {
+    text-align: left;
+}
+.widget_archive li a, .widget_categories li a {
+    float: right;
+}
+.widget.widget_categories li::before {
+	padding-right: inherit;
+	padding-left: 0.5em;
+	float: right;
+}
+.widget.widget_archive li::before {
+	content: "\f0d9";
+	padding-right: inherit;
+	padding-left: 0.5em;
+	float: right;
+}
+aside ul.menu .indicatorBar {
+	right: inherit;
+	left: 0;
+	border-left-width: inherit;
+    border-left-style: inherit;
+	border-right-width: 1px;
+    border-right-style: dashed;
+}
+aside ul.menu ul.sub-menu {
+    padding-left: inherit;
+	padding-right: 2em;
+}
+.widget.widget_search input[type="search"] {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+	border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+	float: right;
+}
+.widget.widget_search input[type="submit"] {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+	border-bottom-left-radius: 25px;
+    border-top-left-radius: 25px;
+	float: left;
+}
+@media all and (max-width: 1024px) {
+	.main-navigation ul li .indicator {
+		right: inherit;
+		left: 0;
+		border-left-width: 0;
+		border-right-width: 1px;
+		border-right-style: solid;
+	}
+	.main-navigation ul ul, .main-navigation ul ul ul {
+		padding-right: 3%;
+		padding-left: 0;
+	}
+}
+@media all and (max-width: 559px) {
+	.post-navigation .nav-previous {
+		text-align: center;
+	}
+}
