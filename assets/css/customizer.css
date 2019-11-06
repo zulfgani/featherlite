@@ -1,10 +1,4 @@
-/* ==========================================================================
-   CSS for Customizer Custom Controls
-   ========================================================================== */
-
-/* ==========================================================================
-   Standard Input
-   ========================================================================== */
+/* Standard Input */
 input[type="text"],
 input[type="number"],
 input[type="url"],
@@ -30,9 +24,7 @@ input[type="number"]:focus {
 	box-shadow: none;
 }
 
-/* ==========================================================================
-   Image Radio Buttons
-   ========================================================================== */
+/* Image Radio Buttons */
 .image_radio_button_control .radio-button-label > input {
 	display: none;
 }
@@ -44,9 +36,7 @@ input[type="number"]:focus {
 	border: 3px solid #2885bb;
 }
 
-/* ==========================================================================
-   Toggle Switch
-   ========================================================================== */
+/* Toggle Switch */
 .toggle-switch-control .customize-control-title {
 	display: inline-block;
 }

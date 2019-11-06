@@ -40,7 +40,9 @@ if ( ! function_exists( 'featherlite_footer_widgets' ) ) {
 }
 add_action( 'featherlite_footer', 'featherlite_footer_widgets', 10 );
 
-function featherlite_footer_content() { ?>
+function featherlite_footer_content() { 
+	do_action( 'featherlite_before_footer' );
+?>
 	<footer id="colophon" class="site-footer">
 		<div class="main-footer">
 			<div class="site-info">
@@ -57,7 +59,7 @@ function featherlite_footer_content() { ?>
 			</div><!-- .site-info -->
 		</div><!-- .main_footer -->
 	</footer><!-- #colophon -->
-<?php
+<?php do_action( 'featherlite_after_footer' );
 }
 add_action( 'featherlite_footer', 'featherlite_footer_content', 20 );
 

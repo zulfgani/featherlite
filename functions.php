@@ -87,25 +87,10 @@ if ( ! function_exists( 'featherlite_setup' ) ) {
 			]
 		);
 		
-		add_theme_support( 
-			'classic-homepage-builder', [
-				'components' => [
-					'classic-hero-block',
-					//'classic-hero-block-two',
-					'classic-content-block',
-					'classic-content-block-two',
-					'gallery',
-					//'classic-contact-form-7',
-					'classic-cta-banner',
-					'classic-recent-posts',
-				],
-				'control_title' => __( 'Edit Page Content', 'featherlite' ),
-				'builder_name' => __( 'FeatherLite Homepage Builder', 'featherlite' ),
-			] 
-		);
 	}
 }
 add_action( 'after_setup_theme', 'featherlite_setup' );
+
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -134,6 +119,7 @@ function featherlite_widgets_init() {
 			'after_widget'  => '</section>',
 			'before_title'  => '<div class="widget-title"><h3>',
 			'after_title'   => '</h3></div>',
+			'container_selector' => '#secondary',
 		] 
 	);
 }
@@ -210,7 +196,7 @@ function featherlite_scripts() {
 	// Theme stylesheet.
 	if ( wp_get_theme()->get('Name') != 'FeatherLite' ) {
 		wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css', array( 'featherlite-fonts' ), $featherlite_version );
-		wp_enqueue_style( $child_style, get_stylesheet_directory_uri( 'featherlite-fonts' ) . '/style.css', array( $parent_style, 'featherlite-fonts' ), $featherlite_version );
+		wp_enqueue_style( $child_style, get_stylesheet_directory_uri() . '/style.css', array( $parent_style, 'featherlite-fonts' ), $featherlite_version );
 	} else {
 		wp_enqueue_style( $parent_style, get_stylesheet_uri(), array(), $featherlite_version );
 	}
@@ -235,7 +221,7 @@ add_action( 'wp_enqueue_scripts', 'featherlite_scripts' );
 
 if ( !function_exists( 'featherlite_locale_css' ) ) {
     function featherlite_locale_css( $uri ){
-        if ( empty( $uri ) && is_rtl() && file_exists( get_theme_file_path() . '/rtl.css' ) )
+        if ( empty( $uri ) && is_rtl() && file_exists( get_parent_theme_file_path() . '/rtl.css' ) )
             $uri = get_theme_file_uri() . '/rtl.css';
         return $uri;
     }
@@ -274,31 +260,27 @@ add_filter( 'the_content', 'featherlite_filter_ptags_on_images' );
 /**
  * Custom location functions for this theme.
  */
-require get_theme_file_path() . '/core/layout/layout-functions.php';
-require get_theme_file_path() . '/core/header/header-functions.php';
-require get_theme_file_path() . '/core/homepage/homepage-functions.php';
-require get_theme_file_path() . '/core/posts/summary-functions.php';
-require get_theme_file_path() . '/core/singular/single-post-functions.php';
-require get_theme_file_path() . '/core/sidebars/sidebar-functions.php';
-require get_theme_file_path() . '/core/fourofour/fourofour-functions.php';
-require get_theme_file_path() . '/core/footer/footer-functions.php';
+require get_parent_theme_file_path() . '/core/layout/layout-functions.php';
+require get_parent_theme_file_path() . '/core/header/header-functions.php';
+require get_parent_theme_file_path() . '/core/templates/homepage-functions.php';
+require get_parent_theme_file_path() . '/core/templates/fullwidth-functions.php';
+require get_parent_theme_file_path() . '/core/posts/summary-functions.php';
+require get_parent_theme_file_path() . '/core/singular/single-post-functions.php';
+require get_parent_theme_file_path() . '/core/sidebars/sidebar-functions.php';
+require get_parent_theme_file_path() . '/core/fourofour/fourofour-functions.php';
+require get_parent_theme_file_path() . '/core/footer/footer-functions.php';
 
 /**
  * Custom template tags for this theme.
  */
-require get_theme_file_path() . '/inc/template-tags.php';
+require get_parent_theme_file_path() . '/inc/template-tags.php';
 
 /**
  * Custom functions that act independently of the theme templates.
  */
-require get_theme_file_path() . '/inc/extras.php';
+require get_parent_theme_file_path() . '/inc/extras.php';
 
 /**
  * Customizer additions.
  */
-require get_theme_file_path() . '/inc/customizer.php';
-
-function featherlite_header_footer_compposer_support() {
-	add_theme_support( 'header-footer-composer' );
-}
-add_action( 'after_setup_theme', 'featherlite_header_footer_compposer_support' );
+require get_parent_theme_file_path() . '/inc/customizer.php';

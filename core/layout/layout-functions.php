@@ -4,7 +4,16 @@ function featherlite_sidebar_render() {
 	get_sidebar();
 }
 
+function featherlite_single_seo_breadcrumbs() {
+	//if ( function_exists( 'cpseo_the_breadcrumbs' )) cpseo_the_breadcrumbs();
+	if ( function_exists( 'cpseo_the_breadcrumbs' ) && ! is_home() && ! is_front_page() ) {
+		cpseo_the_breadcrumbs();
+	}
+}
+add_action( 'featherlite_cpseo_do_breadcrumbs', 'featherlite_single_seo_breadcrumbs', 10 );
+
 function featherlite_index_render() {
+	do_action( 'featherlite_index_primary_before' );
 	?>
 
 	<div id="primary" class="content-area">
@@ -47,10 +56,12 @@ function featherlite_index_render() {
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php
+<?php do_action( 'featherlite_index_primary_after' );
 }
 
 function featherlite_archive_render() {
+	do_action( 'featherlite_archive_primary_before' );
+	do_action( 'featherlite_cpseo_do_breadcrumbs' );
 	?>
 
 	<div id="primary" class="content-area">
@@ -93,10 +104,12 @@ function featherlite_archive_render() {
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php
+<?php do_action( 'featherlite_archive_primary_after' );
 }
 
 function featherlite_search_render() {
+	do_action( 'featherlite_search_primary_before' );
+	do_action( 'featherlite_cpseo_do_breadcrumbs' );
 	?>
 
 	<section id="primary" class="content-area">
@@ -141,10 +154,12 @@ function featherlite_search_render() {
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
-<?php
+<?php do_action( 'featherlite_search_primary_after' );
 }
 
 function featherlite_single_render() {
+	do_action( 'featherlite_single_primary_before' );
+	do_action( 'featherlite_cpseo_do_breadcrumbs' );
 	?>
 
 	<div id="primary" class="content-area">
@@ -170,15 +185,18 @@ function featherlite_single_render() {
 			}
 
 		endwhile; // End of the loop.
+		do_action( 'featherlite_after_main_content' );
 		?>
-
+		
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php 
+<?php do_action( 'featherlite_single_primary_after' );
 }
 
 function featherlite_page_render() {
+	do_action( 'featherlite_page_primary_before' );
+	do_action( 'featherlite_cpseo_do_breadcrumbs' );
 	?>
 
 	<div id="primary" class="content-area">
@@ -200,10 +218,11 @@ function featherlite_page_render() {
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php
+<?php do_action( 'featherlite_page_primary_after' );
 }
 
 function featherlite_fourofour_render() {
+	do_action( 'featherlite_404_primary_before' );
 	?>
 
 	<div id="primary" class="content-area">
@@ -216,7 +235,7 @@ function featherlite_fourofour_render() {
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php
+<?php do_action( 'featherlite_404_primary_after' );
 }
 
 function featherlite_render_layout() {	
@@ -234,7 +253,6 @@ function featherlite_render_layout() {
 		add_action( 'featherlite_page', 'featherlite_page_render', 20 );
 		add_action( 'featherlite_single', 'featherlite_sidebar_render', 10 );
 		add_action( 'featherlite_single', 'featherlite_single_render', 20 );
-		//add_action( 'featherlite_fourofour', 'featherlite_sidebar_render', 10 );
 		add_action( 'featherlite_fourofour', 'featherlite_fourofour_render', 20 );
 		
 	} elseif ( $layout == 'sidebarright' ) {
@@ -249,7 +267,12 @@ function featherlite_render_layout() {
 		add_action( 'featherlite_single', 'featherlite_single_render', 10 );
 		add_action( 'featherlite_single', 'featherlite_sidebar_render', 20 );		
 		add_action( 'featherlite_fourofour', 'featherlite_fourofour_render', 10 );
-		//add_action( 'featherlite_fourofour', 'featherlite_sidebar_render', 20 );
+	}
+	
+	if ( class_exists( 'WooCommerce' ) && is_cart() && is_checkout() && is_product() && is_shop() && is_account_page() ) { 
+		remove_action( 'featherlite_page', 'featherlite_sidebar_render', 10 );
+		remove_action( 'featherlite_page', 'featherlite_sidebar_render', 20 );
+		remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar' );
 	}
 
 }

@@ -938,7 +938,6 @@ footer.site-footer a:active {
 	color: #666666;
 }
 
-
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
@@ -1186,16 +1185,7 @@ header.site-header .main-header {
 	border-top: 1px solid #eaeaea;
 	border-bottom: 1px solid #eaeaea;
 }
-#content.site-content {
-	max-width: 1170px;
-	width: 100%;
-	margin: 3em auto;
-}
-body.elementor-page #content.site-content {
-    max-width: unset;
-    width: 100%;
-    margin: 0 auto;
-}
+
 .header-wrapper {
 	display: flex;
     width: 100%;
@@ -1268,6 +1258,17 @@ p.site-description::after {
     right: 0;
 }
 
+#content.site-content {
+	max-width: 1170px;
+	width: 100%;
+	margin: 3em auto;
+}
+body.elementor-page #content.site-content {
+	max-width: unset;
+	width: 100%;
+	margin: 0 auto;
+}
+
 #primary.content-area {
 	float: left;
 	width: 67%;
@@ -1289,26 +1290,32 @@ body.no-sidebar #primary.content-area {
 	margin-right: auto;
 }
 .page-template-homepage #content.site-content,
-.page-template-homepage #primary.content-area {	
+.page-template-homepage #primary.content-area,
+.page-template-fullwidth #content.site-content,
+.page-template-fullwidth #primary.content-area {	
 	max-width: unset;
 	width: 100%;
     margin: 0 auto;
 }
-.page-template-homepage .hentry {
+.page-template-homepage .hentry,
+.page-template-fullwidth .hentry {
     margin: 0;
 }
-.page-template-homepage .hentry img {
+.page-template-homepage .hentry img,
+.page-template-fullwidth .hentry img {
     margin: 0;
 	padding: 0;
 	max-width: unset;
 	width: 100%;
 }
-.page-template-homepage .hentry p {
+.page-template-homepage .hentry p,
+.page-template-fullwidth .hentry p {
     margin: 0;
     padding: 1em 3em 0.5em;
 }
 
-.page-template-homepage .hentry p:last-child {
+.page-template-homepage .hentry p:last-child,
+.page-template-fullwidth .hentry p:last-child {
     padding-bottom: 1em;
 }
 
@@ -1542,7 +1549,6 @@ footer.site-footer {
 	display: block;
 }
 
-
 .sticky-post {
 	display: inline-block;
 	font-size: 12px;
@@ -1551,10 +1557,13 @@ footer.site-footer {
 	text-align: center;
 	text-transform: uppercase;
 	z-index: 9; 
+	color: #ffffff;
+	background-color: #022140; 
 }
 
 .sticky-post:after {
 	content: ""; 
+	border-top-color: #022140; 
 }
 
 .has-post-thumbnail .sticky-post {
@@ -1579,17 +1588,9 @@ footer.site-footer {
 .has-post-thumbnail .sticky-post:after {
 	right: 0; 
 }
-  
-.sticky-post {
-	color: #ffffff;
-	background-color: #022140;  
-}
+
 .has-post-thumbnail .sticky-post:after {
 	color: #022140; 
-}
-  
-.sticky-post:after {
-	border-top-color: #022140; 
 }
 
 .hentry {
@@ -1700,7 +1701,6 @@ p.logged-in-as { margin-top: 20px; margin-bottom: 20px;}
 
 .comment-reply{}
 .comment-reply-link{font-weight:700;color:#000;display:inline-block;position:relative;}
-/*.comment-reply-link:before{content:"\f178";font-family: 'FontAwesome';margin-right:10px;font-size:18px;position:relative;top:2px}*/
 .comment-reply-link:hover{text-decoration:none}
 
 .comment-form{}
