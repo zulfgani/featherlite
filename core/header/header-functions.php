@@ -44,7 +44,6 @@ function featherlite_primary_navigation() {
 	if ( has_nav_menu( 'primary' ) ) { ?>
 		<nav id="primary-navigation" class="main-navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-				<!--<i class="fa fa-bars spaceLeftRight"></i>-->
 				<div class="bar1"></div>
 				<div class="bar2"></div>
 				<div class="bar3"></div>

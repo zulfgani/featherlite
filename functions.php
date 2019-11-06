@@ -2,18 +2,18 @@
 // Exit if accessed directly
 if ( !defined( 'ABSPATH' ) ) exit;
 /**
- * Centrik functions and definitions.
+ * FeatherLite functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package centrik
+ * @package featherlite
  */
  
 /**
- * Assign the CeneriK version to a var
+ * Assign the FeatherLite version to a var
  */
-$theme 			  = wp_get_theme( 'featherlite' );
-$featherlite_version  = $theme['Version'];
+$theme 			  		= wp_get_theme( 'featherlite' );
+$featherlite_version  	= $theme['Version'];
 
 if ( ! function_exists( 'featherlite_setup' ) ) {
 	/**
@@ -27,7 +27,7 @@ if ( ! function_exists( 'featherlite_setup' ) ) {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on Centrik, use a find and replace
+		 * If you're building a theme based on FeatherLite, use a find and replace
 		 * to change 'featherlite' to the name of your theme in all the template files.
 		 */
 		load_theme_textdomain( 'featherlite' );
