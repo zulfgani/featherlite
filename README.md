@@ -4,12 +4,9 @@ A ClassicPress theme built on action hooks. Just add some imagination and make i
 ## FeatherLite Controls
 Get the companion plugin for controling the theme elements [here](https://github.com/zulfgani/featherlite-controls)
 
-## Changelog
+### Changelog
 
-## v1.0.1 - 14th November 2019
-
-### Minonr no breaking changes.
-
-### Fixed: Navigation menu too far left on widscreens
-
-### Fixed: Lack of padding to content area on medium screens
+v1.0.1 - 14th November 2019
+Minonr no breaking changes.
+Fixed: Navigation menu too far left on widscreens
+Fixed: Lack of padding to content area on medium screens
