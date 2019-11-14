@@ -482,6 +482,10 @@ input[type="submit"] {
     transition: border-color .3s ease-in-out, background .3s ease-in-out, color .3s ease-in-out;
 }
 
+.widget.widget_search input[type="submit"] {
+	padding: 0;
+}
+
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
@@ -644,6 +648,12 @@ footer.site-footer a:active {
 .toggled .bar3 {
   -webkit-transform: rotate(45deg) translate(-4px, -4px) ;
   transform: rotate(45deg) translate(-6px, -7px) ;
+}
+
+#primary-navigation,
+#secondary-navigation {
+	max-width: 168rem;
+	margin: 0 auto;
 }
 
 .main-navigation,
@@ -1270,8 +1280,9 @@ body.elementor-page #content.site-content {
 }
 
 #primary.content-area {
-	float: left;
-	width: 67%;
+    float: left;
+    width: 67%;
+    padding-left: 1.5em;
 }
 
 #secondary.widget-area {

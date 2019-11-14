@@ -28,5 +28,10 @@ FeatherLite is a fully responsive, clean and fresh ClassicPress theme ideal for 
 
 == Changelog ==
 
+= 1.0.1 =
+* Minonr no breaking changes.
+* Fixed: Navigation menu too far left on widscreens
+* Fixed: Lack of padding to content area on medium screens
+
 = Version 1.0.0 =
 * Initial Release

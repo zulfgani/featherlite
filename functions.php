@@ -213,7 +213,7 @@ function featherlite_scripts() {
 	
 	wp_enqueue_script( 'featherlite-skip-link-focus-fix', get_theme_file_uri() . '/assets/js/skip-link-focus-fix.js', array(), $featherlite_version, true );
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+	if ( ( ! is_admin() ) && is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
@@ -232,14 +232,14 @@ add_filter( 'locale_stylesheet_uri', 'featherlite_locale_css' );
  * Replace Excerpt More
  */
 if ( ! function_exists( 'featherlite_new_excerpt_more' ) ) {
+
 	function featherlite_new_excerpt_more( $more ) {
 		if ( ! is_admin() ) {
-			return $more;
+			return '';
 		}
-		return '&hellip;';
 	}
+	add_filter( 'excerpt_more', 'featherlite_new_excerpt_more' );
 }
-add_filter('excerpt_more', 'featherlite_new_excerpt_more');
 
  /**
  * Delete font size style from tag cloud widget
