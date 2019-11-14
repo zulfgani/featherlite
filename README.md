@@ -8,7 +8,7 @@ Get the companion plugin for controling the theme elements [here](https://github
 
 v1.0.1 - 14th November 2019
 
-Minonr no breaking changes.
+Minor no breaking changes.
 
 Fixed: Navigation menu too far left on widscreens.
 
