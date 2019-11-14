@@ -7,6 +7,9 @@ Get the companion plugin for controling the theme elements [here](https://github
 ### Changelog
 
 v1.0.1 - 14th November 2019
+
 Minonr no breaking changes.
-Fixed: Navigation menu too far left on widscreens
+
+Fixed: Navigation menu too far left on widscreens.
+
 Fixed: Lack of padding to content area on medium screens
