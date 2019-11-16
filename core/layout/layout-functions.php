@@ -5,7 +5,6 @@ function featherlite_sidebar_render() {
 }
 
 function featherlite_single_seo_breadcrumbs() {
-	//if ( function_exists( 'cpseo_the_breadcrumbs' )) cpseo_the_breadcrumbs();
 	if ( function_exists( 'cpseo_the_breadcrumbs' ) && ! is_home() && ! is_front_page() ) {
 		cpseo_the_breadcrumbs();
 	}

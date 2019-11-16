@@ -1183,6 +1183,12 @@ form.woocommerce-checkout::after,
 body.admin-bar {
 	
 }
+.site {
+    max-width: 168rem;
+	width: 100%;
+	margin: 0 auto;
+}
+
 header.site-header .main-header,
 footer.site-footer .main-footer,
 #content.site-content {
@@ -1269,9 +1275,10 @@ p.site-description::after {
 }
 
 #content.site-content {
-	max-width: 1170px;
+	max-width: 168rem;
 	width: 100%;
 	margin: 3em auto;
+	padding: 0 3em;
 }
 body.elementor-page #content.site-content {
 	max-width: unset;
@@ -1299,6 +1306,7 @@ body.no-sidebar #primary.content-area {
 	float: none;
 	margin-left: auto;
 	margin-right: auto;
+	padding-left: 0;
 }
 .page-template-homepage #content.site-content,
 .page-template-homepage #primary.content-area,
