@@ -28,6 +28,7 @@ function featherlite_fullwidth_widgets_register() {
 					'after_widget'  => '</section>',
 					'before_title'  => '<div class="widget-title"><h3>',
 					'after_title'   => '</h3></div>',
+					'container_selector' => '#widget-area',
 				) );
 				
 				register_sidebar( array(
@@ -38,6 +39,7 @@ function featherlite_fullwidth_widgets_register() {
 					'after_widget'  => '</section>',
 					'before_title'  => '<div class="widget-title"><h3>',
 					'after_title'   => '</h3></div>',
+					'container_selector' => '#widget-area',
 				) );
 				
 				register_sidebar( array(
@@ -48,6 +50,7 @@ function featherlite_fullwidth_widgets_register() {
 					'after_widget'  => '</section>',
 					'before_title'  => '<div class="widget-title"><h3>',
 					'after_title'   => '</h3></div>',
+					'container_selector' => '#widget-area',
 				) );
 				
 				register_sidebar( array(
@@ -58,6 +61,7 @@ function featherlite_fullwidth_widgets_register() {
 					'after_widget'  => '</section>',
 					'before_title'  => '<div class="widget-title"><h3>',
 					'after_title'   => '</h3></div>',
+					'container_selector' => '#widget-area',
 				) );
 
 			}
@@ -102,7 +106,6 @@ function featherlite_fullwidth_content_render() {
 	do_action( 'featherlite_fullwidth_before' );
 	while ( have_posts() ) : the_post();
 		do_action( 'featherlite_fullwidth_open' );
-			//the_content();
 			featherlite_fullwidth_builder_content();
 		do_action( 'featherlite_fullwidth_close' );
 	endwhile; // End of the loop.

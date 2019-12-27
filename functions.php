@@ -13,6 +13,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
  * Assign the FeatherLite version to a var
  */
 $theme 			  		= wp_get_theme( 'featherlite' );
+$theme_name  			= $theme['Name'];
 $featherlite_version  	= $theme['Version'];
 
 if ( ! function_exists( 'featherlite_setup' ) ) {
@@ -24,6 +25,7 @@ if ( ! function_exists( 'featherlite_setup' ) ) {
 	 * as indicating support for post thumbnails.
 	 */
 	function featherlite_setup() {
+		global $theme_name;
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
@@ -86,6 +88,25 @@ if ( ! function_exists( 'featherlite_setup' ) ) {
 				'caption',
 			]
 		);
+		
+		if ( class_exists( 'totclcInit' ) ) {
+			add_theme_support( 
+				'components-page-builder', [
+					'components' => [
+						'classic-hero-block',
+						'classic-content-block',
+						'classic-content-block-two',
+						'classic-cta-banner',
+						'classic-cta-banner-two',					
+						'classic-recent-posts',
+						'gallery',
+						'classic-commerce-products',
+					],
+					'control_title' => __( $theme_name .' Page Components', 'totc-layout-control' ),
+				] 
+			);
+			
+		}
 		
 	}
 }
@@ -189,6 +210,7 @@ function featherlite_scripts() {
 	global $featherlite_version;
 	$parent_style = 'featherlite-style'; // This is handle for the FeatherLite theme.
 	$child_style = 'featherlite-child-style'; // This is handle for the FeatherLite child themes.
+	$dir_uri = get_template_directory_uri();
 	
 	// Add custom fonts, used in the main stylesheet.
 	wp_enqueue_style( 'featherlite-fonts', featherlite_fonts_url(), array(), null );
@@ -201,17 +223,17 @@ function featherlite_scripts() {
 		wp_enqueue_style( $parent_style, get_stylesheet_uri(), array(), $featherlite_version );
 	}
 	
-	wp_enqueue_script( 'featherlite-custom-js', get_theme_file_uri() . '/assets/js/featherlite.js', array( 'jquery' ), $featherlite_version, true );
+	wp_enqueue_script( 'featherlite-custom-js', $dir_uri . '/assets/js/featherlite.js', array( 'jquery' ), $featherlite_version, true );
 	
 	if ( has_nav_menu( 'primary' ) ) {
-		wp_enqueue_script( 'featherlite-primary-navigation', get_theme_file_uri() . '/assets/js/primary-navigation.js', array(), $featherlite_version, true );
+		wp_enqueue_script( 'featherlite-primary-navigation', $dir_uri . '/assets/js/primary-navigation.js', array(), $featherlite_version, true );
 	}
 	
 	if ( has_nav_menu( 'secondary' ) ) { 
-		wp_enqueue_script( 'featherlite-secondary-navigation', get_theme_file_uri() . '/assets/js/secondary-navigation.js', array(), $featherlite_version, true );
+		wp_enqueue_script( 'featherlite-secondary-navigation', $dir_uri . '/assets/js/secondary-navigation.js', array(), $featherlite_version, true );
 	}
 	
-	wp_enqueue_script( 'featherlite-skip-link-focus-fix', get_theme_file_uri() . '/assets/js/skip-link-focus-fix.js', array(), $featherlite_version, true );
+	wp_enqueue_script( 'featherlite-skip-link-focus-fix', $dir_uri . '/assets/js/skip-link-focus-fix.js', array(), $featherlite_version, true );
 
 	if ( ( ! is_admin() ) && is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -284,3 +306,68 @@ require get_parent_theme_file_path() . '/inc/extras.php';
  * Customizer additions.
  */
 require get_parent_theme_file_path() . '/inc/customizer.php';
+
+function add_featured_image_display_settings( $content, $post_id ) {
+	$field_id    = 'show_featured_image';
+	$field_value = esc_attr( get_post_meta( $post_id, $field_id, true ) );
+	$field_text  = esc_html__( 'Show image.', 'featherlite' );
+	$field_state = checked( $field_value, 1, false);
+
+	$field_label = sprintf(
+	    '<p><label for="%1$s"><input type="checkbox" name="%1$s" id="%1$s" value="%2$s" %3$s> %4$s</label></p>',
+	    $field_id, $field_value, $field_state, $field_text
+	);
+
+	return $content .= $field_label;
+}
+//add_filter( 'admin_post_thumbnail_html', 'add_featured_image_display_settings', 10, 2 );
+
+function save_featured_image_display_settings( $post_ID, $post, $update ) {
+	$field_id    = 'show_featured_image';
+	$field_value = isset( $_REQUEST[ $field_id ] ) ? 1 : 0;
+
+	update_post_meta( $post_ID, $field_id, $field_value );
+}
+//add_action( 'save_post', 'save_featured_image_display_settings', 10, 3 );
+
+
+function add_publish_meta_options($post_obj) {
+ 
+	global $post;
+	$post_type = 'page'; // If you want a specific post type
+	$value = get_post_meta($post_obj->ID, 'check_meta', true); // If saving value to post_meta
+
+	if($post_type==$post->post_type) {
+		echo  '<div id="check-meta" class="misc-pub-section misc-pub-section-last">'
+			 .'<label>
+				<input type="checkbox"' . (!empty($value) ? ' checked="checked" ' : null) . ' value="1" name="check_meta" /> Show Content?
+			 </label>'
+			 .'</div>';
+	}
+}
+//add_action('post_submitbox_misc_actions', 'add_publish_meta_options');
+
+
+function extra_publish_meta_options_save($post_id, $post, $update) {
+ 
+	/*
+	* If using specific post type
+	*/
+	$post_type = 'page';
+	if ( $post_type != $post->post_type ) {
+		return;
+	}
+
+	if ( wp_is_post_revision( $post_id ) ) {
+		return;
+	}
+
+	/*
+	* Checkbox value is 1 if set
+	*/
+	if(isset($_POST['check_meta']) && $_POST['check_meta'] == 1) {
+		update_post_meta($post_id, 'check_meta', $_POST['check_meta']);
+	} 
+ 
+}
+//add_action( 'save_post', 'extra_publish_meta_options_save', 10 , 3);

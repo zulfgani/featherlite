@@ -21,7 +21,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-
+<?php do_action( 'cp_body_open' ); ?>
 <div id="page" class="site">
 	
 	<?php 

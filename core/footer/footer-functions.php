@@ -53,8 +53,13 @@ function featherlite_footer_content() {
 				?>
 				<span class="sep"> | </span>
 				<?php
-				/* translators: 1: theme name, 2: theme developer */
-				printf( esc_html__( 'ClassicPress Theme: %1$s by %2$s.', 'featherlite' ), '<a href="https://github.com/zulfgani/featherlite/" target="_blank" rel="nofollow noopener" title="FeatherLite">FeatherLite</a>', 'GetFeatherLite' );
+				/* translators: 1: CMS used 2: theme name, 3: theme developer */
+				printf( esc_html__( 
+					'%1$s Theme: %2$s by %3$s.', 'featherlite' ),
+					'<a href="https://classicpress.net/" target="_blank" rel="nofollow noopener" title="Powered By ClassicPress">ClassicPress</a>',
+					'<a href="https://github.com/zulfgani/featherlite/" target="_blank" rel="nofollow noopener" title="FeatherLite">FeatherLite</a>', 
+					'GetFeatherLite' 
+				);
 				?>
 			</div><!-- .site-info -->
 		</div><!-- .main_footer -->

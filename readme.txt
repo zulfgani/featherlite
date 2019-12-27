@@ -2,8 +2,8 @@
 Contributors: GetFeatherLite
 Tags: two-columns, right-sidebar, custom-colors, custom-menu, featured-images, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, news
 Requires at least: 1.0.0
-Tested up to: 1.1.0
-Stable tag: 1.0.0
+Tested up to: 1.1.2
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 FeatherLite, A ClassicPress Theme, Copyright 2019 GetFeatherLite
@@ -28,9 +28,22 @@ FeatherLite is a fully responsive, clean and fresh ClassicPress theme ideal for 
 
 == Changelog ==
 
+Dec. 27, 2019, dev time > 2hrs
+
+= 1.0.2 =
+* New: Added a fullwidth widget area to the main header
+* Tweak: Added `title="toggle"` to both Primary and Secondary menu toggle buttons.
+* New: Added an additional action hook below the post title to allow for additional content.
+* Tweak: Footer credits to reflect ClassicPress with a link as the CMS in use
+* New: Added filter to Primary navigation menu to allow for aligment on the menu class to be filtered by child themes and/or plugins
+* New: Added support for Quad Menu (Mega menu plugin).
+* Fix: Fixed bug where mobile menu was not working in a child theme.
+* New: Added support for the Components Page Builder plugin
+* New: Added language files
+
 = 1.0.1 =
-* Minonr no breaking changes.
-* Fixed: Navigation menu too far left on widscreens
+* Minor non breaking changes.
+* Fixed: Navigation menu too far left on widescreens
 * Fixed: Lack of padding to content area on medium screens
 
 = Version 1.0.0 =

@@ -12,7 +12,9 @@ add_action( 'single_post_render', 'featherlite_post_thumbnail', 10 );
 function featherlite_post_header() {
 	echo '<header class="entry-header">';		
 		the_title( '<h1 class="entry-title">', '</h1>' );
+		do_action( 'featherlite_entry_title_after' );
 	echo '</header><!-- .entry-header -->';
+	
 }
 add_action( 'single_post_render', 'featherlite_post_header', 20 );
 

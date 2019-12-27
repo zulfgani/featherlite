@@ -37,24 +37,38 @@ function featherlite_max_mega_menu() {
 	wp_nav_menu( array( 'theme_location' => 'primary' ) );
 }
 
+function featherlite_quad_mega_menu() {
+	quadmenu( array( "theme_location" => "primary", "theme" => "default_theme" ) );
+}
+
 /*
  * Primary Navigation hooked to featherlite_header() @priority 10
  */
 function featherlite_primary_navigation() {
 	if ( has_nav_menu( 'primary' ) ) { ?>
 		<nav id="primary-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" title="toggle">
 				<div class="bar1"></div>
 				<div class="bar2"></div>
 				<div class="bar3"></div>
 			</button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+			<?php 
+			$menu_class = apply_filters( 'featherlite_primary_menu_aligment', 'primary-menu-left' );
+			wp_nav_menu(				
+				array( 
+					'theme_location' 	=> 'primary',
+					'menu_id' 			=> 'primary-menu',
+					'menu_class' 		=> $menu_class
+				)
+			); ?>
 		</nav><!-- #site-navigation -->
 	<?php }
 }
 
 if ( class_exists( 'Mega_Menu' ) ) {
 	add_action( 'featherlite_header', 'featherlite_max_mega_menu', 10 );
+} elseif ( class_exists( 'QuadMenu' ) ) {
+	add_action( 'featherlite_header', 'featherlite_quad_mega_menu', 10 );
 } else {
 	add_action( 'featherlite_header', 'featherlite_primary_navigation', 10 );
 }
@@ -89,7 +103,7 @@ add_action( 'featherlite_masthead', 'featherlite_main_header_render', 20 );
 function featherlite_secondary_navigation() {
 	if ( has_nav_menu( 'secondary' ) ) { ?>
 		<nav id="secondary-navigation" class="secondary-navigation">
-			<button class="menu-toggle" aria-controls="secondary-menu" aria-expanded="false">
+			<button class="menu-toggle" aria-controls="secondary-menu" aria-expanded="false" title="toggle">
 				<div class="bar1"></div>
 				<div class="bar2"></div>
 				<div class="bar3"></div>
@@ -194,6 +208,15 @@ function featherlite_header_widgets_register() {
 			'before_title'  => '<div class="widget-title"><h3>',
 			'after_title'   => '</h3></div>',
 		) );
+		register_sidebar( array(
+			'name'          => esc_html__( 'Fullwidth Main header widget area', 'featherlite' ),
+			'id'            => 'header-fullwidth-widget',
+			'description'   => esc_html__( 'Add a single widget here.', 'featherlite' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<div class="widget-title"><h3>',
+			'after_title'   => '</h3></div>',
+		) );
 	}
 }
 add_action( 'widgets_init', 'featherlite_header_widgets_register' );
@@ -227,6 +250,18 @@ function featherlite_header_aside_right() {
 	echo '</aside><!-- .brand-right -->';
 }
 add_action( 'featherlite_main_header', 'featherlite_header_aside_right', 30 );
+
+/*
+ * Header Brand after hooked to () @priority 40
+ */
+function featherlite_main_header_widget() {
+	if ( is_active_sidebar( 'header-fullwidth-widget' ) ) {
+		echo '<aside class="header-fullwidth-widget">';
+			dynamic_sidebar( 'header-fullwidth-widget' );
+		echo '</aside><!-- .header-fullwidth-widget -->';
+	}
+}
+add_action( 'featherlite_header', 'featherlite_main_header_widget', 40);
 
 function featherlite_header_body_class( $header_class ) {
 	$default 	= featherlite_generate_defaults();
@@ -270,6 +305,11 @@ function featherlite_header_customize_register( $wp_customize ) {
 	$featherlite_brand_right->panel = 'featherlite_header_panel';
 	$featherlite_brand_right->priority = '50';
 	$featherlite_brand_right->description = __( 'Add a widget to the right of site brand', 'featherlite' );
+	
+	$featherlite_header_fullwidth_widget = (object) $wp_customize->get_section( 'sidebar-widgets-header-fullwidth-widget' );
+	$featherlite_header_fullwidth_widget->panel = 'featherlite_header_panel';
+	$featherlite_header_fullwidth_widget->priority = '55';
+	$featherlite_header_fullwidth_widget->description = __( 'Add a widget after the main header', 'featherlite' );
 	
 }
 add_action( 'customize_register', 'featherlite_header_customize_register' );

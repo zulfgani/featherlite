@@ -28,6 +28,7 @@ function featherlite_homepage_widgets_register() {
 					'after_widget'  => '</section>',
 					'before_title'  => '<div class="widget-title"><h3>',
 					'after_title'   => '</h3></div>',
+					'container_selector' => '#widget-area',
 				) );
 				
 				register_sidebar( array(
@@ -38,6 +39,7 @@ function featherlite_homepage_widgets_register() {
 					'after_widget'  => '</section>',
 					'before_title'  => '<div class="widget-title"><h3>',
 					'after_title'   => '</h3></div>',
+					'container_selector' => '#widget-area',
 				) );
 				
 				register_sidebar( array(
@@ -48,6 +50,7 @@ function featherlite_homepage_widgets_register() {
 					'after_widget'  => '</section>',
 					'before_title'  => '<div class="widget-title"><h3>',
 					'after_title'   => '</h3></div>',
+					'container_selector' => '#widget-area',
 				) );
 				
 				register_sidebar( array(
@@ -58,6 +61,7 @@ function featherlite_homepage_widgets_register() {
 					'after_widget'  => '</section>',
 					'before_title'  => '<div class="widget-title"><h3>',
 					'after_title'   => '</h3></div>',
+					'container_selector' => '#widget-area',
 				) );
 
 			}

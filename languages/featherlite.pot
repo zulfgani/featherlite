@@ -1,0 +1,531 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FeatherLite\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-12-24 01:21+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.3.1; wp-4.9.13"
+
+#. 1: CMS used 2: theme name, 3: theme developer
+#: core/footer/footer-functions.php:57
+#, php-format
+msgid "%1$s Theme: %2$s by %3$s."
+msgstr ""
+
+#: core/fourofour/fourofour-functions.php:34
+msgid "404 Sidebar"
+msgstr ""
+
+#: core/footer/footer-functions.php:92
+#: core/fourofour/fourofour-functions.php:84
+msgid "A self adjusting widget area for upto 4 widgets per row."
+msgstr ""
+
+#: core/header/header-functions.php:214
+msgid "Add a single widget here."
+msgstr ""
+
+#: core/header/header-functions.php:196 core/header/header-functions.php:205
+msgid "Add a single widgets here."
+msgstr ""
+
+#: core/header/header-functions.php:310
+msgid "Add a widget after the main header"
+msgstr ""
+
+#: core/header/header-functions.php:300
+msgid ""
+"Add a widget below the site identity ~ appears below the Site Description"
+msgstr ""
+
+#: core/header/header-functions.php:295
+msgid "Add a widget to the left of site brand"
+msgstr ""
+
+#: core/header/header-functions.php:305
+msgid "Add a widget to the right of site brand"
+msgstr ""
+
+#: core/templates/fullwidth-functions.php:197
+msgid "Add widget(s) to the fullwidth bottom primary area"
+msgstr ""
+
+#: core/templates/fullwidth-functions.php:202
+msgid "Add widget(s) to the fullwidth bottom secondary area"
+msgstr ""
+
+#: core/templates/fullwidth-functions.php:187
+msgid "Add widget(s) to the fullwidth top primary area"
+msgstr ""
+
+#: core/templates/fullwidth-functions.php:192
+msgid "Add widget(s) to the fullwidth top secondary area"
+msgstr ""
+
+#: core/templates/homepage-functions.php:200
+msgid "Add widget(s) to the homepage bottom primary area"
+msgstr ""
+
+#: core/templates/homepage-functions.php:205
+msgid "Add widget(s) to the homepage bottom secondary area"
+msgstr ""
+
+#: core/templates/homepage-functions.php:190
+msgid "Add widget(s) to the homepage top primary area"
+msgstr ""
+
+#: core/templates/homepage-functions.php:195
+msgid "Add widget(s) to the homepage top secondary area"
+msgstr ""
+
+#: functions.php:117
+msgid "Add widgets here."
+msgstr ""
+
+#: inc/customizer-controls/customizer-controls.php:162
+msgid "Blog Layout Control"
+msgstr ""
+
+#: inc/customizer-controls/customizer-controls.php:163
+msgid "Blog layout selector"
+msgstr ""
+
+#: comments.php:113
+msgid "Cancel feedback"
+msgstr ""
+
+#. 1: number of comments, 2: post title
+#: comments.php:37
+#, php-format
+msgctxt "comments title"
+msgid "%1$s feedback on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s feedbacks on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#. %s: post title
+#: comments.php:33
+#, php-format
+msgctxt "comments title"
+msgid "One feedback on &ldquo;%s&rdquo;"
+msgstr ""
+
+#: template-parts/content.php:21
+msgid "Continue Reading"
+msgstr ""
+
+#. %s: Name of current post. Only visible to screen readers
+#: core/posts/summary-functions.php:42
+#, php-format
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#: comments.php:91
+msgid ""
+"Cookies Consent: Save my name, email, and website in this browser for the "
+"next time I leave feedback."
+msgstr ""
+
+#: inc/customizer-controls/customizer-controls.php:57
+msgid "Custom content for FeatherLite homepage."
+msgstr ""
+
+#: inc/customizer-controls/customizer-controls.php:69
+msgid "Custom options for the FeatherLite theme."
+msgstr ""
+
+#: core/header/header-functions.php:285
+msgid "Customise the appearance and content of the header area of your site."
+msgstr ""
+
+#: core/fourofour/fourofour-functions.php:78
+msgid "Customize the appearance and content of the 404 page of your site."
+msgstr ""
+
+#: core/footer/footer-functions.php:86
+msgid "Customize the appearance and content of the footer area of your site."
+msgstr ""
+
+#. Name of the template
+msgid "Customizer Custom"
+msgstr ""
+
+#. %s: Name of current post
+#: inc/template-tags.php:75 template-parts/content-page.php:43
+#: template-parts/content.php:27
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+#. Name of the theme
+msgid "FeatherLite"
+msgstr ""
+
+#: core/fourofour/fourofour-functions.php:77
+msgid "FeatherLite 404 Options"
+msgstr ""
+
+#: core/footer/footer-functions.php:85
+msgid "FeatherLite Footer Options"
+msgstr ""
+
+#. Name of the template
+msgid "FeatherLite Fullwidth"
+msgstr ""
+
+#: core/header/header-functions.php:284
+msgid "FeatherLite Header Options"
+msgstr ""
+
+#. Name of the template
+#: inc/customizer-controls/customizer-controls.php:56
+msgid "FeatherLite Homepage"
+msgstr ""
+
+#. Description of the theme
+msgid ""
+"FeatherLite is a fully responsive, clean and fresh ClassicPress theme ideal "
+"for business sites as well as standard blog/news sites."
+msgstr ""
+
+#: inc/customizer-controls/customizer-controls.php:68
+msgid "FeatherLite Options"
+msgstr ""
+
+#: core/posts/summary-functions.php:5
+msgid "Featured"
+msgstr ""
+
+#: comments.php:64
+msgid "Feedback navigation"
+msgstr ""
+
+#: comments.php:81
+msgid "Feedbacks are closed."
+msgstr ""
+
+#: inc/template-tags.php:49
+msgid "Filed under:"
+msgstr ""
+
+#: inc/customizer-controls/customizer-controls.php:119
+msgid "Footer Options"
+msgstr ""
+
+#: core/footer/footer-functions.php:16
+msgid "Footer Widgets Area"
+msgstr ""
+
+#: core/templates/fullwidth-functions.php:26
+#: core/templates/fullwidth-functions.php:36
+msgid "Full width Fullwidth above the fold widget area."
+msgstr ""
+
+#: core/templates/fullwidth-functions.php:46
+#: core/templates/fullwidth-functions.php:56
+msgid "Full width Fullwidth below the fold widget area."
+msgstr ""
+
+#: core/templates/homepage-functions.php:26
+#: core/templates/homepage-functions.php:36
+msgid "Full width Homepage above the fold widget area."
+msgstr ""
+
+#: core/templates/homepage-functions.php:46
+#: core/templates/homepage-functions.php:56
+msgid "Full width Homepage below the fold widget area."
+msgstr ""
+
+#: core/templates/fullwidth-functions.php:44
+msgid "Fullwidth Bottom Primary"
+msgstr ""
+
+#: core/templates/fullwidth-functions.php:54
+msgid "Fullwidth Bottom Secondary"
+msgstr ""
+
+#: core/header/header-functions.php:212
+msgid "Fullwidth Main header widget area"
+msgstr ""
+
+#: core/templates/fullwidth-functions.php:24
+msgid "Fullwidth Top Primary"
+msgstr ""
+
+#: core/templates/fullwidth-functions.php:34
+msgid "Fullwidth Top Secondary"
+msgstr ""
+
+#. Author of the theme
+msgid "GetFeatherLite"
+msgstr ""
+
+#: core/templates/homepage-functions.php:44
+msgid "Homepage Bottom Primary"
+msgstr ""
+
+#: core/templates/homepage-functions.php:54
+msgid "Homepage Bottom Secondary"
+msgstr ""
+
+#: core/templates/homepage-functions.php:24
+msgid "Homepage Top Primary"
+msgstr ""
+
+#: core/templates/homepage-functions.php:34
+msgid "Homepage Top Secondary"
+msgstr ""
+
+#. Author URI of the theme
+msgid "https://getfeatherlite.com"
+msgstr ""
+
+#. URI of the theme
+msgid "https://github.com/zulfgani/featherlite/"
+msgstr ""
+
+#: core/header/header-functions.php:187
+msgid "Ideal for extra text that includes html for a CTA button or two."
+msgstr ""
+
+#: template-parts/content-none.php:36
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#. %s: post title
+#: inc/template-tags.php:35
+#, php-format
+msgid "Leave Feedback<span class=\"screen-reader-text\"> on %s</span>"
+msgstr ""
+
+#: comments.php:110
+msgid "Leave your Feedback"
+msgstr ""
+
+#. %s: name of person to reply
+#: comments.php:112
+#, php-format
+msgid "Leave your Feedback to %s"
+msgstr ""
+
+#: core/header/header-functions.php:194
+msgid "Left of Site Identity"
+msgstr ""
+
+#: inc/customizer-controls/customizer-controls.php:168
+msgid "Left Sidebar"
+msgstr ""
+
+#. 1: profile user link, 2: username, 3: logout link
+#: comments.php:108
+#, php-format
+msgid ""
+"Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
+"this account\">Log out?</a>"
+msgstr ""
+
+#: functions.php:115
+msgid "Main Sidebar"
+msgstr ""
+
+#: inc/customizer-controls/customizer-controls.php:85
+msgid "Make the Primary Navbar Menu Sticky."
+msgstr ""
+
+#: comments.php:68
+msgid "Newer Feedbacks"
+msgstr ""
+
+#: core/layout/layout-functions.php:46 core/layout/layout-functions.php:94
+#: core/layout/layout-functions.php:144
+msgid "Next"
+msgstr ""
+
+#: core/layout/layout-functions.php:173
+msgid "Next Post"
+msgstr ""
+
+#: core/layout/layout-functions.php:174
+msgid "Next post:"
+msgstr ""
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#: comments.php:67
+msgid "Older Feedbacks"
+msgstr ""
+
+#. If there are characters in your language that are not supported
+#. by Oswald, translate this to 'off'. Do not translate into your own language.
+#: functions.php:140
+msgctxt "Oswald font: on or off"
+msgid "on"
+msgstr ""
+
+#: template-parts/content-page.php:32 core/posts/summary-functions.php:56
+#: core/singular/single-post-functions.php:41
+msgid "Page"
+msgstr ""
+
+#: template-parts/content-page.php:28 core/posts/summary-functions.php:52
+#: core/singular/single-post-functions.php:37
+msgid "Pages:"
+msgstr ""
+
+#: core/layout/layout-functions.php:45 core/layout/layout-functions.php:93
+#: core/layout/layout-functions.php:143
+msgid "Previous"
+msgstr ""
+
+#: core/layout/layout-functions.php:176
+msgid "Previous Post"
+msgstr ""
+
+#: core/layout/layout-functions.php:177
+msgid "Previous post:"
+msgstr ""
+
+#: functions.php:60
+msgid "Primary"
+msgstr ""
+
+#. %1$s: create new post link
+#: template-parts/content-none.php:24
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: core/fourofour/fourofour-functions.php:36
+msgid "Replace the 404 widgets by adding custom/preferred widgets here."
+msgstr ""
+
+#: comments.php:99
+msgid "Required fields are marked "
+msgstr ""
+
+#: comments.php:57
+msgid "Respond"
+msgstr ""
+
+#: core/header/header-functions.php:203
+msgid "Right of Site Identity"
+msgstr ""
+
+#: inc/customizer-controls/customizer-controls.php:172
+msgid "Right Sidebar"
+msgstr ""
+
+#. If there are characters in your language that are not supported
+#. by Roboto, translate this to 'off'. Do not translate into your own language.
+#: functions.php:148
+msgctxt "Roboto font: on or off"
+msgid "on"
+msgstr ""
+
+#. %s: search query
+#: core/layout/layout-functions.php:124
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: functions.php:61
+msgid "Secondary"
+msgstr ""
+
+#: core/footer/footer-functions.php:18
+msgid "Self adjusting widget area ~ upto 4 widgets per row."
+msgstr ""
+
+#: functions.php:292
+msgid "Show image."
+msgstr ""
+
+#: inc/customizer-controls/customizer-controls.php:109
+msgid "Sidebar customization controls."
+msgstr ""
+
+#: inc/customizer-controls/customizer-controls.php:108
+msgid "Sidebar Options"
+msgstr ""
+
+#: core/sidebars/sidebar-functions.php:6
+msgid "Sidebars"
+msgstr ""
+
+#: core/header/header-functions.php:185
+msgid "Site Identity After"
+msgstr ""
+
+#: inc/customizer-controls/customizer-controls.php:96
+msgid "Site Layout Options"
+msgstr ""
+
+#: core/header/header-functions.php:6
+msgid "Skip to content"
+msgstr ""
+
+#: template-parts/content-none.php:30
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: inc/customizer-controls/customizer-controls.php:84
+msgid "Sticky Menu"
+msgstr ""
+
+#: inc/customizer-controls/customizer-controls.php:142
+msgid "Sticky Primary Navbar"
+msgstr ""
+
+#: comments.php:114
+msgid "Submit Feedback"
+msgstr ""
+
+#: inc/customizer-controls/customizer-controls.php:120
+msgid "Theme footer customization Controls."
+msgstr ""
+
+#: inc/customizer-controls/customizer-controls.php:97
+msgid "Theme layout customization controls."
+msgstr ""
+
+#. %s: wordpress login url
+#: comments.php:106
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr ""
+
+#: comments.php:95
+msgid "Your Email *"
+msgstr ""
+
+#: comments.php:109
+msgid "Your email address will not be published."
+msgstr ""
+
+#: comments.php:115
+msgid "Your Feedback *"
+msgstr ""
+
+#: comments.php:94
+msgid "Your Name *"
+msgstr ""
+
+#: comments.php:96
+msgid "Your Website"
+msgstr ""

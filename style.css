@@ -1,10 +1,10 @@
 /*
 Theme Name: FeatherLite
 Theme URI: https://github.com/zulfgani/featherlite/
-Author: ClassicDesigner
+Author: GetFeatherLite
 Author URI: https://getfeatherlite.com
 Description: FeatherLite is a fully responsive, clean and fresh ClassicPress theme ideal for business sites as well as standard blog/news sites.
-Version: 1.0.0
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: featherlite
@@ -801,9 +801,9 @@ footer.site-footer a:active {
 .secondary-navigation ul li:focus > ul, 
 .secondary-navigation ul li:active > ul, 
 .secondary-navigation ul li.focus > ul {
-	visibility:visible;
-	opacity:1;
-	transition-delay:0s;
+	visibility: visible;
+	opacity: 1;
+	transition-delay: 0s;
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
 }
@@ -1074,7 +1074,9 @@ form.woocommerce-checkout::after,
     padding: 1em 1.5em;
     position: relative;
 }
-
+.customizer-ocw-container .widget {
+    padding: 0;
+}
 .widget.widget_search {
 	margin-bottom: 2.5em;
 }
@@ -1089,6 +1091,10 @@ form.woocommerce-checkout::after,
 .brand-left .widget .widget-title,
 .brand-right .widget .widget-title {
 	display: none;
+}
+
+.header-fullwidth-widget .widget {
+    padding: 0;
 }
 
 /* Make sure select elements fit in widgets. */
@@ -1315,6 +1321,7 @@ body.no-sidebar #primary.content-area {
 	max-width: unset;
 	width: 100%;
     margin: 0 auto;
+	padding: 0;
 }
 .page-template-homepage .hentry,
 .page-template-fullwidth .hentry {
@@ -1331,6 +1338,12 @@ body.no-sidebar #primary.content-area {
 .page-template-fullwidth .hentry p {
     margin: 0;
     padding: 1em 3em 0.5em;
+}
+
+.page-template-homepage .hentry .note-content p,
+.page-template-fullwidth .hentry .note-content p {
+    margin: 0;
+    padding: 1em 0 0.5em;
 }
 
 .page-template-homepage .hentry p:last-child,
@@ -1410,7 +1423,7 @@ header.entry-header .cat-links {
 .site-main .navigation.pagination .nav-links a.page-numbers:active,
 .page-links a .page-links-number:hover,
 .page-links a .page-links-number:focus,
-.page-links a .page-links-number:active{
+.page-links a .page-links-number:active {
 	border-color: #022140;
 	background-color: transparent;
 	color: #022140;
@@ -1517,26 +1530,27 @@ footer.site-footer {
 }
 
 #toTop {
-  position: fixed;
-  bottom: -50px;
-  right: 30px;
-  width: 40px;
-  height: 40px;
-  line-height: 38px;
-  text-decoration: none;
-  outline: none;
-  text-align: center;
-  cursor: pointer;
-  color: #f7f7f7;
-  background-color: #022140;
-  -webkit-transition-timing-function: cubic-bezier(.42,.66,.14,1.24);
-    -moz-transition-timing-function: cubic-bezier(.42,.66,.14,1.24);
-    -o-transition-timing-function: cubic-bezier(.42,.66,.14,1.24);
-    transition-timing-function: cubic-bezier(.42,.66,.14,1.24);
-    -webkit-transition-duration: 0.4s;
-    -moz-transition-duration: 0.4s;
-    -o-transition-duration: 0.4s;
-    transition-duration: 0.4s;
+	position: fixed;
+	bottom: -50px;
+	right: 30px;
+	width: 40px;
+	height: 40px;
+	line-height: 38px;
+	text-decoration: none;
+	outline: none;
+	text-align: center;
+	cursor: pointer;
+	z-index: 11;
+	color: #f7f7f7;
+	background-color: #022140;
+	-webkit-transition-timing-function: cubic-bezier(.42,.66,.14,1.24);
+	-moz-transition-timing-function: cubic-bezier(.42,.66,.14,1.24);
+	-o-transition-timing-function: cubic-bezier(.42,.66,.14,1.24);
+	transition-timing-function: cubic-bezier(.42,.66,.14,1.24);
+	-webkit-transition-duration: 0.4s;
+	-moz-transition-duration: 0.4s;
+	-o-transition-duration: 0.4s;
+	transition-duration: 0.4s;
 	-webkit-transition-property: bottom;
 	-moz-transition-property: bottom;
 	-o-transition-property: bottom;
@@ -1631,6 +1645,11 @@ footer.site-footer {
 .entry-summary {
 	margin: 1.5em 0 0;
 	position: relative;
+}
+.page-template-customizer-custom-template .page-content,
+.page-template-customizer-custom-template .entry-content,
+.page-template-customizer-custom-template .entry-summary {
+	margin: 0;
 }
 
 .entry-summary {
