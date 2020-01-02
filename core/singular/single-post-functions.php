@@ -43,3 +43,28 @@ function featherlite_link_pages() {
 	) );
 }
 add_action( 'single_post_render', 'featherlite_link_pages', 50 );
+
+function featherlite_quick_summary() {
+	global  $post;
+	if ( ! defined( 'QUICK_SUMMARY_VERSION' ) ) {
+		return;
+	}
+	
+	$summary_title      = get_post_meta( $post->ID, 'quicksummary_title', true );
+	$summary_textarea   = get_post_meta( $post->ID, 'quicksummary_textarea', true );
+
+	if ( is_singular( get_post_type() ) && '' !== $summary_title || '' !== $summary_textarea ) {	
+		echo '<div class="featherlite-quick-summary">';
+			if ( '' !== $summary_title ) {
+				echo '<p class="featherlite-quick-summary-title">' . esc_html( $summary_title ) . '</p>';
+			}
+			
+			if ( '' !== $summary_textarea ) {
+			echo '<section aria-label="quick summary" class="article__summary">';
+				echo '<p class="featherlite-quick-summary-text">' . esc_html( $summary_textarea ) . '</p>';
+			echo '</section>';
+			}
+		echo '</div>';
+	}
+}
+add_action( 'featherlite_entry_title_after', 'featherlite_quick_summary', 10 );

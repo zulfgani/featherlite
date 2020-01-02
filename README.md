@@ -6,6 +6,12 @@ Get the companion plugin for controling the theme elements [here](https://github
 
 ### Changelog
 
+Dec. 29, 2019, dev time < 30mins
+
+v1.0.3
+
+* Tweak: Removed the GitHub updater dependance and added a self containe update script.
+
 Dec. 27, 2019, dev time > 2hrs
 
 v1.0.2

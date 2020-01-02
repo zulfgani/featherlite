@@ -267,19 +267,13 @@ function featherlite_render_layout() {
 		add_action( 'featherlite_single', 'featherlite_sidebar_render', 20 );		
 		add_action( 'featherlite_fourofour', 'featherlite_fourofour_render', 10 );
 	}
-	
-	if ( class_exists( 'WooCommerce' ) && is_cart() && is_checkout() && is_product() && is_shop() && is_account_page() ) { 
-		remove_action( 'featherlite_page', 'featherlite_sidebar_render', 10 );
-		remove_action( 'featherlite_page', 'featherlite_sidebar_render', 20 );
-		remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar' );
-	}
-
 }
 add_action( 'template_redirect', 'featherlite_render_layout' );
 
 function featherlite_layout_body_class( $layout_class ) {
-	$default 	= featherlite_generate_defaults();
+	$default	= featherlite_generate_defaults();
 	$layout 	= get_theme_mod( 'featherlite_site_layout_setting', $default['featherlite_site_layout_default'] );
+	
 	if ( $layout == 'sidebarleft' && ! is_404() ) {
 		$layout_class[] = 'sidebarleft';
 	} elseif ( $layout == 'sidebarright' && ! is_404() ) {

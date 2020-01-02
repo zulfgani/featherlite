@@ -3,7 +3,7 @@ Contributors: GetFeatherLite
 Tags: two-columns, right-sidebar, custom-colors, custom-menu, featured-images, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, news
 Requires at least: 1.0.0
 Tested up to: 1.1.2
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 FeatherLite, A ClassicPress Theme, Copyright 2019 GetFeatherLite
@@ -27,6 +27,14 @@ FeatherLite is a fully responsive, clean and fresh ClassicPress theme ideal for 
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
 
 == Changelog ==
+
+Dec. 02, 2020, dev time < 2hrs
+
+= 1.0.3 =
+
+* NEW: Security - added esc_html() function to get_the_title() in comments.php
+* NEW: Feature - added support for the Quick Summary plugin and hooked to featherlite_entry_title_after action on singular template.
+* NEW: Feature - added support for the Classic Menu Labels plugin
 
 Dec. 27, 2019, dev time > 2hrs
 

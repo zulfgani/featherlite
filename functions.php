@@ -99,8 +99,10 @@ if ( ! function_exists( 'featherlite_setup' ) ) {
 						'classic-cta-banner',
 						'classic-cta-banner-two',					
 						'classic-recent-posts',
+						'classic-recent-products',
 						'gallery',
 						'classic-commerce-products',
+						'classic-contact-form-7',
 					],
 					'control_title' => __( $theme_name .' Page Components', 'totc-layout-control' ),
 				] 
@@ -307,3 +309,4 @@ require get_parent_theme_file_path() . '/inc/extras.php';
  */
 require get_parent_theme_file_path() . '/inc/customizer.php';
 
+//require get_parent_theme_file_path( '/inc/updater.php' );
